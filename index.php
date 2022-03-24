@@ -18,8 +18,8 @@ if(isset($_POST['submit'])){
 	if (move_uploaded_file($_FILES["videofile"]["tmp_name"], $target_file)) {
 		$file_name = $target_file;
 		$uri = $client->upload($file_name, array(
-	  	"name" => "Video 1",
-	  	"description" => "The description goes here."
+	  	"name" => $title,
+	  	"description" => $desc
 		));
 
 		echo "Your video URI is: " . $uri;
