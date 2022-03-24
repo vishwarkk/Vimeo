@@ -1,0 +1,7 @@
+file1 = open("sample.txt")
+lines = file1.readline()
+lines += file1.readline()
+file2 = open("file2.txt","w")
+file2.write(lines)
+file2 = open("file2.txt")
+print(file2.read())
