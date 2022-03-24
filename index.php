@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
 		));
 
 		if(mysqli_query($con,"INSERT INTO class1(class_id, Month, rec_num, uri) VALUES('$class_id','$month','$number','$uri')")){
-			echo "done <br> {$uri} <br>";
+			echo "done <br>";
 		}
 
 		$response = $client->request($uri . '?fields=link');
