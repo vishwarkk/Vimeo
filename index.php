@@ -50,6 +50,15 @@ if(isset($_POST['update'])){
 	echo 'The title and description for ' . $curi . ' has been edited.';
 }
 
+if(isset($_POST['protect'])){
+
+	$curi = getthis($con,'class1','uri','id',3);
+	$client->request($curi, array(
+	  'privacy' => 'disable'
+	), 'PATCH');
+
+	echo $curi . 'Protected';
+}
 
 
 
@@ -75,6 +84,10 @@ if(isset($_POST['update'])){
 		<input type="text" name="ntitle" placeholder="new title">
 		<input type="text" name="ndesc" placeholder="new decription">
 		<input type="submit" name="update" value="update">
+	</form>
+	<h2>Protect</h2>
+	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+		<input type="submit" name="protect" value="protect">
 	</form>
 </body>
 </html>
