@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
 	<title>Vimeo Test</title>
 </head>
 <body>
-	<form method="POST" action="#" enctype="multipart/form-data">
+	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data">
 		<input type="file" name="videofile">
 		<input type="text" name="title" placeholder="Title">
 		<input type="text" name="desc" placeholder="description">
