@@ -13,6 +13,9 @@ if(isset($_POST['submit'])){
 
 	$title = $_POST['title'];
 	$desc = $_POST['desc'];
+	$class_id = $_POST['class_id'];
+	$number = $_POST['number'];
+	$month = 'January';
 
 	$target_dir = "uploads/";
 	$target_file = $target_dir . basename($_FILES["videofile"]["name"]);
@@ -23,6 +26,9 @@ if(isset($_POST['submit'])){
 	  	"description" => $desc
 		));
 
+		if(mysqli_query($con,'INSERT INTO class1(class_id,Month,rec_num,uri) VALUES('$class_id','$month','$number','$uri')')){
+			echo 'done';
+		}
 
 		$response = $client->request($uri . '?fields=link');
 		echo "Your video link is: " . $response['body']['link'];
@@ -46,6 +52,8 @@ if(isset($_POST['submit'])){
 		<input type="file" name="videofile">
 		<input type="text" name="title" placeholder="Title">
 		<input type="text" name="desc" placeholder="description">
+		<input type="text" name="class_id" placeholder="Class ID">
+		<input type="number" name="number" min='1'>
 		<input type="submit" name="submit">
 	</form>
 </body>
