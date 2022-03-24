@@ -39,8 +39,15 @@ if(isset($_POST['submit'])){
 if(isset($_POST['update'])){
 	$ntitle = $_POST['ntitle'];
 	$ndesc = $_POST['ndesc'];
-	$uri = getthis($con,'class1','uri','id',3);
-	echo $uri."<br>".$ntitle."<br>".$ndesc;
+	$curi = getthis($con,'class1','uri','id',3);
+	//echo $uri."<br>".$ntitle."<br>".$ndesc;
+	
+	$client->request($curi, array(
+	  'name' => $ntitle,
+	  'description' => $ndesc,
+	), 'PATCH');
+
+	echo 'The title and description for ' . $curi . ' has been edited.';
 }
 
 
