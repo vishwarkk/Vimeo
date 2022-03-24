@@ -22,7 +22,8 @@ if(isset($_POST['submit'])){
 	  	"description" => $desc
 		));
 
-		echo "Your video URI is: " . $uri;
+		$response = $client->request($uri . '?fields=link');
+		echo "Your video link is: " . $response['body']['link'];
 	}
 }
 
