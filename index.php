@@ -1,6 +1,7 @@
 <?php
 require "vendor/autoload.php";
 require "config.php";
+require "functions.php";
 use Vimeo\Vimeo;
 
 define('C_ID','fab1241c976814019cbe050a4edea77a7a72a8fc');
@@ -35,7 +36,12 @@ if(isset($_POST['submit'])){
 	}
 }
 
-
+if(isset($_POST['update'])){
+	$ntitle = $_POST['ntitle'];
+	$ndesc = $_POST['ndesc'];
+	$uri = getthis($con,'class1','uri','id',3);
+	echo $uri."<br>".$ntitle."<br>".$ndesc;
+}
 
 
 
@@ -55,6 +61,13 @@ if(isset($_POST['submit'])){
 		<input type="text" name="class_id" placeholder="Class ID">
 		<input type="number" name="number" min='1'>
 		<input type="submit" name="submit">
+	</form>
+
+	<h2>Change title and description</h2>
+	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+		<input type="text" name="ntitle" placeholder="new title">
+		<input type="text" name="ndesc" placeholder="new decription">
+		<input type="submit" name="update" value="update">
 	</form>
 </body>
 </html>
