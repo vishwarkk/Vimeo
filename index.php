@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 	  	"description" => $desc
 		));
 
-		if(mysqli_query($con,'INSERT INTO class1(class_id,Month,rec_num,uri) VALUES('$class_id','$month','$number','$uri')')){
+		if(mysqli_query($con,"INSERT INTO class1(class_id, Month, rec_num,uri) VALUES('$class_id','$month','$number','$uri')")){
 			echo 'done';
 		}
 
