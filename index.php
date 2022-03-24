@@ -17,12 +17,12 @@ if(isset($_POST['submit'])){
 	$target_file = $target_dir . basename($_FILES["videofile"]["name"]);
 	if (move_uploaded_file($_FILES["videofile"]["tmp_name"], $target_file)) {
 		$file_name = $target_file;
-		$uri = $client->upload($file_name, array(
-	  	"name" => "Video 1",
-	  	"description" => "The description goes here."
-		));
+		//$uri = $client->upload($file_name, array(
+	 // 	"name" => "Video 1",
+	 // 	"description" => "The description goes here."
+		//));
 
-		echo "Your video URI is: " . $uri;
+	//	echo "Your video URI is: " . $uri;
 	}
 }
 
