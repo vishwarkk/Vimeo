@@ -1,5 +1,6 @@
 <?php
 require "vendor/autoload.php";
+require "config.php";
 use Vimeo\Vimeo;
 
 define('C_ID','fab1241c976814019cbe050a4edea77a7a72a8fc');
@@ -21,6 +22,7 @@ if(isset($_POST['submit'])){
 	  	"name" => $title,
 	  	"description" => $desc
 		));
+
 
 		$response = $client->request($uri . '?fields=link');
 		echo "Your video link is: " . $response['body']['link'];
