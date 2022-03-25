@@ -88,7 +88,7 @@ if(isset($_POST['delete'])){
 //print_r($client->request($curi. '/privacy/domains'));
 
 $result = $client->request($curi);
-$result2 = $client->request($curi. '/pictures');
+$result2 = $client->request($curi. '/pictures/1400495523');
 echo '<pre>';
 print_r($result);
 print_r($result2);
