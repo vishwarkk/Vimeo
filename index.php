@@ -65,15 +65,14 @@ if(isset($_POST['protect'])){
 if(isset($_POST['whitelist'])){
 	$uri = getthis($con,'class1','uri','id',3);
 	$domain = $_POST['domain'];
-	echo $domain;
-	$client->request($uri . "/privacy/domains/{$domain}");
+	$client->request($uri . "/privacy/domains/".$domain);
 	$client->request($uri, array(
 	  'privacy' => array(
 	    'embed' => 'whitelist'
 	  )
 	), 'PUT');
 
-	echo $uri . ' will only be embeddable on "http://{$domain}".';
+	echo $uri . " will only be embeddable on http://".$domain.;
 }
 
 ?>
