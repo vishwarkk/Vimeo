@@ -70,7 +70,7 @@ if(isset($_POST['whitelist'])){
 	  'privacy' => array(
 	    'embed' => 'whitelist'
 	  )
-	), 'PATCH');
+	), 'PUT');
 
 	echo $curi . ' will only be embeddable on "http://example.com".';
 
