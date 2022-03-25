@@ -70,8 +70,7 @@ if(isset($_POST['whitelist'])){
 	  'privacy' => array(
 	    'embed' => 'whitelist'
 	  )
-	), 'PATCH');
-	$client->request('PUT');
+	), 'PUT');
 
 	echo $uri . ' will only be embeddable on "http://{$domain}".';
 }
