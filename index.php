@@ -88,10 +88,11 @@ if(isset($_POST['delete'])){
 //print_r($client->request($curi. '/privacy/domains'));
 
 //$result = $client->request($curi);
-$result2 = $client->request($curi. '/pictures',array(),'POST');
+//$result2 = $client->request($curi. '/pictures',array(),'POST');
+$result3 = $client->uploadImage($curi. '/pictures', 'http://delegatetest.tk/uploads/1-2.webp', true)
 echo '<pre>';
 //print_r($result);
-print_r($result2);
+print_r($result3);
 ?>
 <!DOCTYPE html>
 <html>
