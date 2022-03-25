@@ -92,7 +92,9 @@ class Vimeo
      */
     public function request($url, $params = array(), $method = 'PUT', $json_body = true, array $headers = array()): array
     {
-        echo $url."<br>".$params."<br>".$method;
+        echo $url."<pre>";
+        print_r($params);
+        echo "<br>".$method;
         $headers = array_merge(array(
             'Accept' => self::VERSION_STRING,
             'User-Agent' => self::USER_AGENT,
