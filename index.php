@@ -66,11 +66,11 @@ if(isset($_POST['whitelist'])){
 	$uri = getthis($con,'class1','uri','id',3);
 	$domain = $_POST['domain'];
 	$client->request($uri . "/privacy/domains/delegate.lk");
-	$client->request('PUT'.$uri, array(
+	$client->request($uri, array(
 	  'privacy' => array(
 	    'embed' => 'whitelist'
 	  )
-	), 'PATCH');
+	));
 
 	//echo $uri . " will only be embeddable on http://".$domain;
 }
