@@ -89,7 +89,7 @@ if(isset($_POST['delete'])){
 
 //$result = $client->request($curi);
 //$result2 = $client->request($curi. '/pictures',array(),'POST');
-$result3 = $client->uploadImage($curi. '/pictures', 'http://delegatetest.tk/uploads/1-2.webp', true)
+$result3 = $client->uploadImage($curi. '/pictures', 'http://delegatetest.tk/uploads/1-2.webp', true);
 echo '<pre>';
 //print_r($result);
 print_r($result3);
