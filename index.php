@@ -120,7 +120,7 @@ if(isset($_POST['delete'])){
 
 	<h2>Delete Domain</h2>
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-		<input type="text" name="domain2" placeholder="example.com">
+		<input type="text" name="del_domain" placeholder="example.com">
 		<input type="submit" name="delete" value="delete">
 	</form>
 </body>
