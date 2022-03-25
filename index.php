@@ -55,16 +55,24 @@ if(isset($_POST['protect'])){
 	$curi = getthis($con,'class1','uri','id',3);
 	$client->request($curi, array(
 	  'privacy' => array(
-	    'view' => 'disable'
-	  ),
-	  'password' => ''
+	    'view' => 'anyone'
+	  )
 	), 'PATCH');
 
 	echo $curi . 'Protected';
 }
 
+if(isset($_POST['whitelist'])){
+	$domain = $_POST['domain'];
+	$client->request($uri . "/privacy/domains/{$domain}", 'PUT');
+	$client->request($uri, array(
+	  'privacy' => array(
+	    'embed' => 'whitelist'
+	  )
+	), 'PATCH');
 
-
+	echo $uri . ' will only be embeddable on "http://{$domain}".';
+}
 
 ?>
 <!DOCTYPE html>
@@ -91,6 +99,12 @@ if(isset($_POST['protect'])){
 	<h2>Protect</h2>
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 		<input type="submit" name="protect" value="protect">
+	</form>
+
+	<h2>Whitelist Domain</h2>
+	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+		<input type="text" name="domain" placeholder="example.com">
+		<input type="submit" name="whitelist" value="whitelist">
 	</form>
 </body>
 </html>
