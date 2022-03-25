@@ -81,10 +81,15 @@ if(isset($_POST['delete'])){
 	    'embed' => 'whitelist'
 	  )
 	), 'DELETE');
+
+	echo $curi . ' embed permission deleted on http://'.$domain;
 }
 //echo '<pre>';
 //print_r($client->request($curi. '/privacy/domains'));
 
+$result = $client->request('https://api.vimeo.com'.$curi,array());
+echo '<pre>';
+print_r($result);
 ?>
 <!DOCTYPE html>
 <html>
