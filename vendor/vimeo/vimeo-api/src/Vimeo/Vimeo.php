@@ -96,6 +96,8 @@ class Vimeo
         echo "<pre>";
         print_r($params);
         echo "<br>".$method;
+
+        
         $headers = array_merge(array(
             'Accept' => self::VERSION_STRING,
             'User-Agent' => self::USER_AGENT,
