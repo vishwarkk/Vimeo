@@ -99,7 +99,7 @@ class Vimeo
         ), $headers);
 
         $method = strtoupper($method);
-        echo $method;
+        //echo $method;
 
         // If a pre-defined `Authorization` header isn't present, then add a bearer token or client information.
         if (!isset($headers['Authorization'])) {
