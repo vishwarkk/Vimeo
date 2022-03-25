@@ -73,8 +73,17 @@ if(isset($_POST['whitelist'])){
 	echo $curi . ' will only be embeddable on http://'.$domain;
 
 }
-echo '<pre>';
-print_r($client->request($curi. '/privacy/domains'));
+
+if(isset($_POST['delete'])){
+	$domain = $_POST['del_domain'];
+	$client->request($curi. '/privacy/domains/'.$domain, array(
+	  'privacy' => array(
+	    'embed' => 'whitelist'
+	  )
+	), 'DELETE');
+}
+//echo '<pre>';
+//print_r($client->request($curi. '/privacy/domains'));
 
 ?>
 <!DOCTYPE html>
@@ -107,6 +116,12 @@ print_r($client->request($curi. '/privacy/domains'));
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 		<input type="text" name="domain" placeholder="example.com">
 		<input type="submit" name="whitelist" value="whitelist">
+	</form>
+
+	<h2>Delete Domain</h2>
+	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+		<input type="text" name="domain2" placeholder="example.com">
+		<input type="submit" name="delete" value="delete">
 	</form>
 </body>
 </html>
