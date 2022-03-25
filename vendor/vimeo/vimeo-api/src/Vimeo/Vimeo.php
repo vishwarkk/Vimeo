@@ -92,6 +92,7 @@ class Vimeo
      */
     public function request($url, $params = array(), $method = 'GET', $json_body = true, array $headers = array()): array
     {
+        echo $url;
         echo "<pre>";
         print_r($params);
         echo "<br>".$method;
