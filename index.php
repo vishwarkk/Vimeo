@@ -65,13 +65,12 @@ if(isset($_POST['protect'])){
 if(isset($_POST['whitelist'])){
 	$curi = getthis($con,'class1','uri','id',3);
 
-	$client->request($curi . '/privacy/domains/example.com');
-	$client->request($curi, array(
+	//$client->request($curi . '/privacy/domains/example.com');
+	$client->request($curi . '/privacy/domains/example.com', array(
 	  'privacy' => array(
 	    'embed' => 'whitelist'
 	  )
 	), 'PATCH');
-	$client->request($curi,'PUT');
 
 	echo $curi . ' will only be embeddable on "http://example.com".';
 

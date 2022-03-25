@@ -94,7 +94,7 @@ class Vimeo
     {
 
         print_r($method);
-
+        
         $headers = array_merge(array(
             'Accept' => self::VERSION_STRING,
             'User-Agent' => self::USER_AGENT,
