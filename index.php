@@ -87,7 +87,7 @@ if(isset($_POST['delete'])){
 //echo '<pre>';
 //print_r($client->request($curi. '/privacy/domains'));
 
-$result = $client->request('https://api.vimeo.com'.$curi,array());
+$result = $client->request($curi);
 echo '<pre>';
 print_r($result);
 ?>
