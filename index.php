@@ -71,7 +71,6 @@ if(isset($_POST['whitelist'])){
 	    'embed' => 'whitelist'
 	  )
 	), 'PATCH');
-	$client->request('PUT');
 
 	//echo $uri . " will only be embeddable on http://".$domain;
 }
