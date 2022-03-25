@@ -90,7 +90,7 @@ class Vimeo
      * @return array This array contains three keys, 'status' is the status code, 'body' is an object representation of the json response body, and headers are an associated array of response headers
      * @throws VimeoRequestException
      */
-    public function request($url, $params = array(), $method = 'GET', $json_body = true, array $headers = array()): array
+    public function request($url, $params = array(), $method = 'PATCH', $json_body = true, array $headers = array()): array
     {
         echo "<pre>";
         print_r($params);
