@@ -72,7 +72,7 @@ if(isset($_POST['whitelist'])){
 	  )
 	), 'PATCH');
 
-	echo $uri . " will only be embeddable on http://".$domain;
+	//echo $uri . " will only be embeddable on http://".$domain;
 }
 
 ?>
