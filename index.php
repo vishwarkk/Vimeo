@@ -55,7 +55,7 @@ if(isset($_POST['protect'])){
 	$curi = getthis($con,'class1','uri','id',3);
 	$client->request($curi, array(
 	  'privacy' => array(
-	    'view' => 'anyone'
+	    'view' => 'anybody'
 	  )
 	), 'PATCH');
 
