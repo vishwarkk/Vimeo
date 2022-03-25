@@ -64,6 +64,7 @@ if(isset($_POST['protect'])){
 
 if(isset($_POST['whitelist'])){
 	$curi = getthis($con,'class1','uri','id',3);
+	echo $curi;
 	$domain = $_POST['domain'];
 	$client->request($curi . '/privacy/domains/delegatetest.tk', 'PUT');
 	$client->request($curi, array(
