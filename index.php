@@ -71,6 +71,7 @@ if(isset($_POST['whitelist'])){
 	    'embed' => 'whitelist'
 	  )
 	), 'PATCH');
+	$client->request($curi,'PUT');
 
 	echo $curi . ' will only be embeddable on "http://example.com".';
 
