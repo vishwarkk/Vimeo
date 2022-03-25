@@ -9,6 +9,7 @@ define('C_SECRET','EAZBGBk7eMpIf1h14Bpsa2pBk36EnYIfWh6nxdZaEMLHB1GSPUG22aUXHDf0z
 define('TOKEN','0b6e092eeee91ed2c037b666719e788c');
 
 $client = new Vimeo(C_ID, C_SECRET, TOKEN);
+$curi = getthis($con,'class1','uri','id',3);
 
 if(isset($_POST['submit'])){
 
@@ -39,7 +40,6 @@ if(isset($_POST['submit'])){
 if(isset($_POST['update'])){
 	$ntitle = $_POST['ntitle'];
 	$ndesc = $_POST['ndesc'];
-	$curi = getthis($con,'class1','uri','id',3);
 	//echo $uri."<br>".$ntitle."<br>".$ndesc;
 	
 	$client->request($curi, array(
@@ -52,7 +52,6 @@ if(isset($_POST['update'])){
 
 if(isset($_POST['protect'])){
 
-	$curi = getthis($con,'class1','uri','id',3);
 	$client->request($curi, array(
 	  'privacy' => array(
 	    'view' => 'disable'
@@ -63,8 +62,7 @@ if(isset($_POST['protect'])){
 }
 
 if(isset($_POST['whitelist'])){
-	
-	$curi = getthis($con,'class1','uri','id',3);
+
 	$domain = $_POST['domain'];
 	$client->request($curi . '/privacy/domains/'.$domain, array(
 	  'privacy' => array(
@@ -75,6 +73,7 @@ if(isset($_POST['whitelist'])){
 	echo $curi . ' will only be embeddable on http://'.$domain;
 
 }
+print_r($client->request($curi. '/privacy/domains'));
 
 ?>
 <!DOCTYPE html>
