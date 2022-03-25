@@ -87,12 +87,11 @@ if(isset($_POST['delete'])){
 //echo '<pre>';
 //print_r($client->request($curi. '/privacy/domains'));
 
-//$result = $client->request($curi);
-//$result2 = $client->request($curi. '/pictures',array(),'POST');
-$result3 = $client->uploadImage($curi. '/pictures', 'uploads/1-2.webp', true);
-echo '<pre>';
-//print_r($result);
-print_r($result3);
+
+if(isset($_POST['thumb'])){
+	$result3 = $client->uploadImage($curi. '/pictures', 'uploads/1-2.webp', true);
+	echo 'Thubnail uploaded successfully';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -130,6 +129,11 @@ print_r($result3);
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 		<input type="text" name="del_domain" placeholder="example.com">
 		<input type="submit" name="delete" value="delete">
+	</form>
+
+	<h2>Update thumb</h2>
+	<form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+		<input type="submit" name="thumb" value="update">
 	</form>
 </body>
 </html>
