@@ -65,7 +65,7 @@ if(isset($_POST['protect'])){
 if(isset($_POST['whitelist'])){
 	$curi = getthis($con,'class1','uri','id',3);
 
-	$client->request($curi . '/privacy/domains/example.com', 'PUT');
+	$client->request($curi . '/privacy/domains/example.com');
 	$client->request($curi, array(
 	  'privacy' => array(
 	    'embed' => 'whitelist'
