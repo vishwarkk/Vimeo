@@ -92,15 +92,15 @@ class Vimeo
      */
     public function request($url, $params = array(), $method = 'GET', $json_body = true, array $headers = array()): array
     {
-        echo "<pre>";
-        print_r($method);
+        
         $headers = array_merge(array(
             'Accept' => self::VERSION_STRING,
             'User-Agent' => self::USER_AGENT,
         ), $headers);
 
         $method = strtoupper($method);
-        //echo $method;
+        echo "<pre>";
+        print_r($method);
 
         // If a pre-defined `Authorization` header isn't present, then add a bearer token or client information.
         if (!isset($headers['Authorization'])) {
