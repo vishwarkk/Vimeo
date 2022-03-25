@@ -73,6 +73,7 @@ if(isset($_POST['whitelist'])){
 	echo $curi . ' will only be embeddable on http://'.$domain;
 
 }
+echo '<pre>';
 print_r($client->request($curi. '/privacy/domains'));
 
 ?>
